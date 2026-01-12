@@ -1,0 +1,104 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+section {
+    margin: 0px 0;
+    padding: 50px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.lol{
+    height: 50px;
+    font-size: 50px;
+    animation: chayngang 5s linear infinite;
+    
+}
+@keyframes chayngang {
+    from{
+        transform: translateX(100%)
+    }
+    to{
+        transform: translateX(-80%);
+    }
+    
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    margin: 0 auto;
+    animation: rotateBox 3s linear infinite;
+}
+
+@keyframes rotateBox {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.fade-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.fade-img {
+    width: 150px;
+    height: 150px;
+    opacity: 0;
+    animation: fadeIn 2s ease forwards;
+}
+
+.fade-img:nth-child(1) { animation-delay: 0s; }
+.fade-img:nth-child(2) { animation-delay: 0.5s; }
+.fade-img:nth-child(3) { animation-delay: 1s; }
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.cta {
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    animation: blink 1s infinite alternate;
+    border-radius: 5px;
+}
+
+@keyframes blink {
+    0% { background-color: red; transform: scale(1); }
+    50% { background-color: orange; transform: scale(1.05); }
+    100% { background-color: red; transform: scale(1); }
+}
+
+.slider {
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+.slides {
+    display: flex;
+    width: 900px; 
+    animation: slide 15s infinite;
+}
+
+.slides img {
+    width: 300px;
+    height: 200px;
+}
+
+@keyframes slide {
+    0% { transform: translateX(0); }
+    33.33% { transform: translateX(-300px); }
+    66.66% { transform: translateX(-600px); }
+    100% { transform: translateX(0); }
+}
