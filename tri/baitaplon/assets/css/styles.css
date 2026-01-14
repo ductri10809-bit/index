@@ -1,0 +1,171 @@
+section {
+    border: 1px;
+    border-radius: 5px;
+    
+    
+    width: 100vw;
+    margin-left: calc(50% - 50vw); 
+  overflow: hidden; 
+    }
+h1{
+    text-align: center;
+    animation: fade-in 2s ease-in forwards;
+    cursor: pointer;
+    }
+@keyframes fade-in{
+    from{opacity: 0};
+    to{opacity: 1};
+}
+.font{
+    font-size: 50px;
+    color: greenyellow;
+    
+}
+h2{
+    height: 50px;
+    font-size: 50px;
+    animation: chayngang 5s linear infinite;
+    color: red;
+    
+}
+@keyframes chayngang {
+    from{
+        transform: translateX(100%)
+    }
+    to{
+        transform: translateX(-70%);
+    }
+    
+}
+.nav{
+    width: 100%;              /* đủ rồi */
+      /* tạo chiều cao */
+  display: flex;
+ 
+  align-items: center;
+  background-color: gray;
+  gap: 50px;
+  position: sticky;
+  top: 0;
+  z-index: 1000
+    
+    
+}
+.nav {
+    display: flex;
+    list-style: none;
+    gap: -1px;
+    padding: 15px;
+}
+
+.nav a {
+    text-decoration: none;
+    color:black;
+    font-size: 18px;
+    position: relative; 
+    padding-bottom: 0px;
+    padding: 0%;
+    font-weight: 700;
+}
+
+.nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;                 
+    background-color: #007bff;
+    transition: width 0.3s ease;
+}
+
+.nav a:hover::after {
+    width: 100%;             
+}
+body {
+    background: white;
+    color: black;
+  }
+  
+  body.dark {
+    background: #111;
+    color: #fff;
+  }
+  .movies{
+    display: flex;
+    gap: 50px;
+    padding: 50px;
+  }
+  .card {
+    width: 180px;
+    background: #eee;
+    padding: 10px;
+    border-radius: 8px;
+  
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.5s;
+  }
+  
+  .card.show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .card img {
+    width: 100%;
+    border-radius: 6px;
+  }
+  
+  .card p {
+    margin-top: 8px;
+    font-size: 14px;
+  }
+h3{
+    color: grey;
+    text-align: center;
+    animation: IM 2s ease-in forwards;
+}
+@keyframes IM{
+    from{opacity: 0;}
+    to{opacity: 1;}
+}
+.card:hover img {
+    transition: 0.5s ease-in-out;
+    transform: scale(1.1);
+    filter: brightness(0.85);
+  }
+  p{
+    text-align: center;
+    color: #111;
+  }
+  .nav a.active {
+    color: red;
+    font-weight: bold;
+  }
+  
+  .nav a.active::after {
+    width: 100%;
+  }
+  
+    .cta {
+        padding: 12px 24px;
+        font-size: 16px;
+        font-weight: bold;
+      
+        border: none;
+        border-radius: 25px;
+      
+        background: red;
+        color: white;
+        cursor: pointer;
+      }
+      @keyframes blink {
+        0% { background: red; }
+        50% { background: orange; }
+        100% { background: red; }
+      }
+      
+      .cta {
+        animation: blink 1.5s infinite;
+      }
