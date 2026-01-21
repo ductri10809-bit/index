@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Contact | StartupX</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <style>
+    .form-group {
+      position: relative;
+      margin-bottom: 25px;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      outline: none;
+    }
+
+    .form-group label {
+      position: absolute;
+      top: 50%;
+      left: 12px;
+      color: #888;
+      transform: translateY(-50%);
+      pointer-events: none;
+      transition: .3s;
+      background: #fff;
+      padding: 0 5px;
+    }
+
+    .form-group input:focus + label,
+    .form-group input:not(:placeholder-shown) + label {
+      top: -8px;
+      font-size: 12px;
+      color: #4f46e5;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #4f46e5;
+      color: #fff;
+      padding: 15px 20px;
+      border-radius: 8px;
+      opacity: 0;
+      transition: .4s;
+    }
+
+    .toast.show {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+<header class="header">
+    <div class="logo" ><a href="index.html">
+        <img src="assets/img/istockphoto-1029939134-1024x1024.jpg" alt="StartupX">StartupX
+        </a>
+        
+      </div>
+
+  <nav class="nav">
+    <a href="index.html">Home</a>
+    <a href="features.html">Features</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="contact.html" class="active">Contact</a>
+  </nav>
+
+  <div class="menu-toggle">☰</div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Contact Us</h1>
+      <p>Let’s build something great together</p>
+    </div>
+  </section>
+
+  <section class="features reveal">
+    <form id="contactForm" class="feature-card">
+      <div class="form-group">
+        <input type="text" id="name" placeholder=" " required>
+        <label>Name</label>
+      </div>
+
+      <div class="form-group">
+        <input type="email" id="email" placeholder=" " required>
+        <label>Email</label>
+      </div>
+      <div class="form-group" class="hi1">
+        <input type="text" id="name" placeholder=" " required>
+        <label>Text</label>
+      </div>
+
+      <button class="btn-primary" type="submit">Send Message</button>
+    </form>
+  </section>
+</main>
+
+<div class="toast" id="toast">Message sent successfully!</div>
+
+<footer class="footer">
+    <a href="index.html"><p>© 2026 StartupX</p></a>
+    <p>-</p>
+    <a href="contact.html"><p>HELP</p></a>
+  
+</footer>
+
+<script src="assets/js/app.js"></script>
+<script>
+  const form = document.getElementById("contactForm");
+  const toast = document.getElementById("toast");
+
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+
+    localStorage.setItem("contactName", name);
+    localStorage.setItem("contactEmail", email);
+
+    toast.classList.add("show");
+    setTimeout(() => toast.classList.remove("show"), 3000);
+
+    form.reset();
+  });
+</script>
+
+</body>
+</html>
